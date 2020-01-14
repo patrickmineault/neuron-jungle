@@ -1,0 +1,14 @@
+<Xdmf xmlns:xi="http://www.w3.org/2001/XInclude" Version="3.0">
+  <Domain>
+    <Grid Name="Grid">
+      <Geometry Origin="" Type="ORIGIN_DXDYDZ">
+        <DataItem DataType="Float" Dimensions="3" Format="XML" Precision="8">0 0 0</DataItem>
+        <DataItem DataType="Float" Dimensions="3" Format="XML" Precision="8">2.49 1 1</DataItem>
+      </Geometry>
+      <Topology Dimensions="1024 1024 1024" Type="3DCoRectMesh"/>
+      <Attribute Center="Node" Name="SegData" Type="Scalar">
+        <DataItem DataType="UInt" Dimensions="1024 1024 1024" Format="HDF">x0y0z0_remapped.hdf5:/data</DataItem>
+      </Attribute>
+    </Grid>
+  </Domain>
+</Xdmf>
