@@ -1,0 +1,21 @@
+kind: Pod
+metadata:
+  labels:
+    foo: bar
+spec:
+  restartPolicy: Never
+  containers:
+  - image: pmineault/dask-worker:0.0.1
+    imagePullPolicy: IfNotPresent
+    args: [dask-worker, --nthreads, '2', --no-bokeh, --memory-limit, 5GB, --death-timeout, '60']
+    name: dask
+    env:
+      - name: EXTRA_PIP_PACKAGES
+        value: fastparquet
+    resources:
+      limits:
+        cpu: "1.6"
+        memory: 5G
+      requests:
+        cpu: "1.6"
+        memory: 5G
