@@ -7,7 +7,7 @@
       </Geometry>
       <Topology Dimensions="1024 1024 1024" Type="3DCoRectMesh"/>
       <Attribute Center="Node" Name="SegData" Type="Scalar">
-        <DataItem DataType="UInt" Dimensions="1024 1024 1024" Format="HDF">x0y0z0_remapped.hdf5:/data</DataItem>
+        <DataItem DataType="UInt" Dimensions="1024 1024 1024" Format="HDF">{}:/data</DataItem>
       </Attribute>
     </Grid>
   </Domain>
