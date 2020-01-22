@@ -1,0 +1,39 @@
+cull:
+  # In a single user install, you don't want to shutdown notebooks automatically.
+  enabled: false
+
+proxy:
+  secretToken: "<token>"
+
+singleuser:
+  storage:
+    capacity: 25Gi
+  serviceAccountName: daskkubernetes
+  defaultUrl: "/lab"
+  image:
+    # I used a custom docker container with extra dependencies.
+    # You could also use a pre-built one list dask/dask-notebook.
+    # https://hub.docker.com/r/daskdev/dask-notebook
+    #name: dask/dask-notebook
+    #tag: latest
+    name: pmineault/dask-cloud
+    tag: 0.0.2
+
+hub:
+  extraConfig:
+    jupyterlab: |
+      c.Spawner.cmd = ['jupyter-labhub']
+
+auth:
+  type: github
+  github:
+    clientId: "<id>"
+    clientSecret: "<secret>"
+    callbackUrl: "http://<ip>/hub/oauth_callback"
+  admin:
+    access: true
+    users:
+      - <github-user>
+  whitelist:
+    users:
+      - <github-user>
