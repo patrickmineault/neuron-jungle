@@ -5,7 +5,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-  - image: pmineault/dask-worker:0.0.2
+  - image: pmineault/dask-worker:latest
     imagePullPolicy: IfNotPresent
     args: [dask-worker, --nthreads, '2', --no-bokeh, --memory-limit, 5GB, --death-timeout, '60']
     name: dask
