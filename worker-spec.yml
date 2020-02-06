@@ -7,7 +7,7 @@ spec:
   containers:
   - image: pmineault/dask-worker:latest
     imagePullPolicy: IfNotPresent
-    args: [dask-worker, --nthreads, '2', --no-bokeh, --memory-limit, 5GB, --death-timeout, '60']
+    args: [dask-worker, --nthreads, '2', --no-bokeh, --memory-limit, 5.7GB, --death-timeout, '60']
     name: dask
     env:
       - name: EXTRA_PIP_PACKAGES
@@ -15,7 +15,7 @@ spec:
     resources:
       limits:
         cpu: "1.6"
-        memory: 5G
+        memory: 5.7G
       requests:
         cpu: "1.6"
-        memory: 5G
+        memory: 5.7G
