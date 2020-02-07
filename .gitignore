@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+dask-worker-space/
+meshes-filled-assembled-lod/
+meshes-filled-assembled/
+meshes-filled/
+meshes-with-axons-filled-assembled/
+meshes-with-axons-filled/
+neuron-volume-with-axons-filled/
+neuron-volume-with-axons-unfilled/
+segmentation-volume/
+xdmf/
