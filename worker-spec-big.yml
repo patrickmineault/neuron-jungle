@@ -1,0 +1,26 @@
+kind: Pod
+metadata:
+  labels:
+    foo: bar
+spec:
+  restartPolicy: Never
+  tolerations:
+  - key: k8s.dask.org_dedicated_big
+    operator: "Equal"
+    value: worker
+    effect: NoSchedule
+  containers:
+  - image: pmineault/dask-worker:latest
+    imagePullPolicy: IfNotPresent
+    args: [dask-worker, --nthreads, '4', --no-bokeh, --memory-limit, 13.2GB, --death-timeout, '60']
+    name: dask
+    env:
+      - name: EXTRA_PIP_PACKAGES
+        value: fastparquet
+    resources:
+      limits:
+        cpu: "3.6"
+        memory: 13.2G
+      requests:
+        cpu: "3.6"
+        memory: 13.2G
