@@ -12,15 +12,15 @@ spec:
   containers:
   - image: pmineault/dask-worker:latest
     imagePullPolicy: IfNotPresent
-    args: [dask-worker, --nthreads, '4', --no-bokeh, --memory-limit, 13.2GB, --death-timeout, '60']
+    args: [dask-worker, --nthreads, '4', --no-bokeh, --memory-limit, 12.7GB, --death-timeout, '60']
     name: dask
     env:
       - name: EXTRA_PIP_PACKAGES
         value: fastparquet
     resources:
       limits:
-        cpu: "3.6"
-        memory: 13.2G
+        cpu: "3.7"
+        memory: 12.7G
       requests:
-        cpu: "3.6"
-        memory: 13.2G
+        cpu: "3.7"
+        memory: 12.7G
